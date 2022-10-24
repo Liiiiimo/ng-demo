@@ -1,0 +1,32 @@
+<h2>ViewContainerRef example</h2>
+
+<ng-template #dynamicCreateInnerHTMLTpl let-name="name">
+  <p>I'm {{ name }}, working</p>
+</ng-template>
+
+<ng-container #demo1Tpl></ng-container>
+
+<ng-container #demo2Tpl></ng-container>
+
+<br />
+
+<h2>Cdk Portal example</h2>
+
+<!-- You can create a TemplatePortal from an <ng-template>.  -->
+<ng-template #dynamicCreatecdkTemplatePortal>
+  <p>I'm demo3, working</p>
+</ng-template>
+
+<!-- CdkPortalOutlet must have a parent node when render a DOM portal  -->
+<div class="cdk-example-card">
+  <ng-container [cdkPortalOutlet]="selectPortal"></ng-container>
+</div>
+
+<button (click)="createCpn3()">Render template portal</button>
+&nbsp;
+<button (click)="createCpn4()">Render component portal</button>
+&nbsp;
+<button (click)="createCpn5()">Render DOM portal</button>
+
+<!-- Used to get a portal from an <ng-template>. CdkPortal is a Portal. -->
+<p #dynamicCreateDom>I'm demo4, working</p>
