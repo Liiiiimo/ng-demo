@@ -1,0 +1,12 @@
+:host{
+    .fake-input{
+        padding: 5px;
+        border-radius: 5px;
+        border:1px solid #666;
+
+        &:focus-visible{
+            outline: none;
+            border:1px solid #0086b7;
+        }
+    }
+}

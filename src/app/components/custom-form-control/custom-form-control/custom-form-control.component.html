@@ -1,0 +1,9 @@
+<form [formGroup]="form">
+  <app-fake-input formControlName="input"></app-fake-input>
+</form>
+
+<button (click)="onRestValue()">reset value</button>
+
+<br />
+
+<p>input value: {{ getFormControl("input")?.value }}</p>
