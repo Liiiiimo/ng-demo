@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'custom-form', loadChildren: () => import('./components/custom-form-control/custom-form-control.module').then(c => c.CustomFormControlModule) },
   { path: 'common', loadChildren: () => import('./components/common/common.module').then(c => c.CommonDemoModule) },
   { path: 'i18n', loadChildren: () => import('./components/i18n/i18n.module').then(c => c.I18nModule) },
+  { path: 'ngrx-demo', loadChildren: () => import('./components/ngrx-demo/ngrx-demo.module').then(c => c.NgrxDemoModule) },
   { path: '', redirectTo: 'common', pathMatch: 'full' },
 ];
 

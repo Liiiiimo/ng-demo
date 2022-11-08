@@ -1397,19 +1397,40 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@ngrx/component-store@^13.0.0":
+  version "13.2.0"
+  resolved "https://registry.npmjs.org/@ngrx/component-store/-/component-store-13.2.0.tgz#1fbff82088409fa0a2b22e13e8d8638da2b7e879"
+  integrity sha512-+g4AVI59rrQewPUDmpnMQORlm1odUkfcdWmRdB8NuArPnMbU32Qd8/ROsxB2hWCw4bzLOHXWl9TR43864DuhhQ==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/store-devtools@^13.0.0":
+  version "13.2.0"
+  resolved "https://registry.npmjs.org/@ngrx/store-devtools/-/store-devtools-13.2.0.tgz#69193e32aee141397d7d2c11c43278e3fa5191e7"
+  integrity sha512-k1NifkR/4OjbjAxauVZODCsgs2owMJXvEX2XoTWth7zscbHE8L3pLd0k1ox5pMPUEqWIptWTaJDzYqnQSoJaaw==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/store@^13.0.0":
+  version "13.2.0"
+  resolved "https://registry.npmjs.org/@ngrx/store/-/store-13.2.0.tgz#43d4e9bf064808dd546ef1edbbcd08c2a8e0871a"
+  integrity sha512-3wlGMkfe0EXsiS6E6W0wCksuGapa5Z6JVFvKQMHFpXZ3XeixXKlULnemlcdMT7Yrnry+CGOtRHqkmKxLoQzhTw==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@13.3.9":
   version "13.3.9"
   resolved "https://registry.npmjs.org/@ngtools/webpack/-/webpack-13.3.9.tgz#31618a43095f9dee96ece9014c3f10a097914633"
   integrity sha512-wmgOI5sogAuilwBZJqCHVMjm2uhDxjdSmNLFx7eznwGDa6LjvjuATqCv2dVlftq0Y/5oZFVrg5NpyHt5kfZ8Cg==
 
-"@ngx-translate/core@14.0.0":
+"@ngx-translate/core@^14.0.0":
   version "14.0.0"
   resolved "https://registry.npmjs.org/@ngx-translate/core/-/core-14.0.0.tgz#af421d0e1a28376843f0fed375cd2fae7630a5ff"
   integrity sha512-UevdwNCXMRCdJv//0kC8h2eSfmi02r29xeE8E9gJ1Al4D4jEJ7eiLPdjslTMc21oJNGguqqWeEVjf64SFtvw2w==
   dependencies:
     tslib "^2.3.0"
 
-"@ngx-translate/http-loader@7.0.0":
+"@ngx-translate/http-loader@^7.0.0":
   version "7.0.0"
   resolved "https://registry.npmjs.org/@ngx-translate/http-loader/-/http-loader-7.0.0.tgz#905f38d8d13342621516635bf480ff9a4f73e9fc"
   integrity sha512-j+NpXXlcGVdyUNyY/qsJrqqeAdJdizCd+GKh3usXExSqy1aE9866jlAIL+xrfDU4w+LiMoma5pgE4emvFebZmA==
