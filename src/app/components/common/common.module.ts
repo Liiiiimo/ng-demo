@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { CommonRoutingModule } from './common-routing.module';
 import { CommonComponent } from './common/common.component';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
   declarations: [
-    CommonComponent
+    CommonComponent,
+    TestComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,10 @@
 import { Component, forwardRef, HostListener } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+/**
+ * custom form control component
+ */
+
 @Component({
   selector: 'app-fake-input',
   templateUrl: './fake-input.component.html',

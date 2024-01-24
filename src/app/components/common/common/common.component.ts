@@ -1,11 +1,12 @@
-import { Component, Inject, LOCALE_ID, OnInit, SecurityContext } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit, SecurityContext, } from '@angular/core';
 import { DomSanitizer, makeStateKey, Meta, SafeHtml, SafeUrl, SafeValue, Title, TransferState } from '@angular/platform-browser';
 import { FormStyle, getLocaleDayNames, getLocaleDayPeriods, getLocaleMonthNames, getLocaleWeekEndRange, TranslationWidth } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-common',
   templateUrl: './common.component.html',
-  styleUrls: ['./common.component.scss']
+  styleUrls: ['./common.component.scss'],
 })
 export class CommonComponent implements OnInit {
 
@@ -19,7 +20,8 @@ export class CommonComponent implements OnInit {
     private title: Title,
     private transferState: TransferState,
     private dom: DomSanitizer,
-    @Inject(LOCALE_ID) private locale: string
+    @Inject(LOCALE_ID) private locale: string,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +30,19 @@ export class CommonComponent implements OnInit {
     this.testStateKey();
     this.testTrustHTML();
     this.getlocal();
+    console.log(this.route);
+    this.route.queryParams.subscribe(res => {
+      console.log('queryParamMap', res);
+    });
+    this.route.params.subscribe(res => {
+      console.log('paramMap', res);
+    });
+    this.route.fragment.subscribe(res => {
+      console.log('fragment', res);
+    });
+    this.route.data.subscribe(res => {
+      console.log(res);
+    });
   }
 
   testStateKey() {
@@ -36,6 +51,7 @@ export class CommonComponent implements OnInit {
     this.transferState.set(APP, { name: 'app1' });
     this.transferState.set(APP1, { name: 'app2' });
     console.log(this.transferState.get(APP1, {}));
+
   }
 
   testTrustHTML(): void {

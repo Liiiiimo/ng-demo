@@ -3,7 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonComponent } from './common/common.component';
 
 const routes: Routes = [
-  { path: '', component: CommonComponent, pathMatch: 'full' },
+  {
+    path: '', component: CommonComponent, pathMatch: 'full',
+    data: { value: 1 }
+  },
+  { path: 'test/:id', component: CommonComponent, data: { value: 2 } }
 ];
 
 @NgModule({
