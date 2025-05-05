@@ -5,12 +5,13 @@ import { DemoComponent } from './components/demo/demo.component';
 @Component({
   selector: 'app-dynamic-create-component',
   templateUrl: './dynamic-create-component.component.html',
-  styleUrls: ['./dynamic-create-component.component.scss']
+  styleUrls: ['./dynamic-create-component.component.scss'],
 })
 export class DynamicCreateComponentComponent implements OnInit {
-
-  @ViewChild('dynamicCreateInnerHTMLTpl', { read: TemplateRef, static: true }) dynamicCreateInnerHTMLTpl!: TemplateRef<any>;
-  @ViewChild('dynamicCreatecdkTemplatePortal', { read: TemplateRef, static: true }) dynamicCreatecdkTemplatePortal!: TemplateRef<any>;
+  @ViewChild('dynamicCreateInnerHTMLTpl', { read: TemplateRef, static: true })
+  dynamicCreateInnerHTMLTpl!: TemplateRef<any>;
+  @ViewChild('dynamicCreatecdkTemplatePortal', { read: TemplateRef, static: true })
+  dynamicCreatecdkTemplatePortal!: TemplateRef<any>;
   @ViewChild('dynamicCreateDom', { read: ElementRef, static: true }) dynamicCreateDom!: ElementRef<HTMLElement>;
   @ViewChild('demo1Tpl', { read: ViewContainerRef, static: true }) demo1Tpl!: ViewContainerRef;
   @ViewChild('demo2Tpl', { read: ViewContainerRef, static: true }) demo2Tpl!: ViewContainerRef;
@@ -19,7 +20,7 @@ export class DynamicCreateComponentComponent implements OnInit {
 
   selectPortal?: Portal<any>;
 
-  constructor (private _vcr: ViewContainerRef) { }
+  constructor(private _vcr: ViewContainerRef) {}
 
   ngOnInit(): void {
     this.createCpn1();
@@ -27,7 +28,7 @@ export class DynamicCreateComponentComponent implements OnInit {
   }
 
   createCpn1(): void {
-    this.demo1Tpl.createEmbeddedView(this.dynamicCreateInnerHTMLTpl, { name: "demo01" });
+    this.demo1Tpl.createEmbeddedView(this.dynamicCreateInnerHTMLTpl, { name: 'demo01' });
   }
 
   createCpn2(): void {
@@ -48,5 +49,4 @@ export class DynamicCreateComponentComponent implements OnInit {
     const dom = new DomPortal(this.dynamicCreateDom);
     this.selectPortal = dom;
   }
-
 }

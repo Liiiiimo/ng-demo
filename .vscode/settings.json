@@ -1,7 +1,13 @@
 {
-    "typescript.tsdk": "node_modules\\typescript\\lib",
-    "tslint.configFile": "./tslint.json",
-    "tslint.packageManager": "yarn",
-    "tslint.suppressWhileTypeErrorsPresent": true,
-    "tslint.alwaysShowRuleFailuresAsWarnings": true
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "tslint.configFile": "./tslint.json",
+  "tslint.packageManager": "yarn",
+  "tslint.suppressWhileTypeErrorsPresent": true,
+  "tslint.alwaysShowRuleFailuresAsWarnings": true,
+  "eslint.options": {
+    "extensions": [".ts", ".html"]
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false
 }

@@ -10,17 +10,9 @@ import { AppComponent } from './app.component';
 registerLocaleData(zh);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [
-    { provide: LOCALE_ID, useValue: 'zh-CN' }
-  ],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [{ provide: LOCALE_ID, useValue: 'zh-CN' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

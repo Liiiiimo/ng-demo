@@ -7,12 +7,12 @@ import { getRootSelector } from '../store/root/root.selector';
 @Component({
   selector: 'app-root',
   templateUrl: './root.component.html',
-  styleUrls: ['./root.component.scss']
+  styleUrls: ['./root.component.scss'],
 })
 export class RootComponent implements OnInit {
   value: number = 0;
 
-  constructor (private store: Store<AppStateInterface>) { }
+  constructor(private store: Store<AppStateInterface>) {}
 
   ngOnInit(): void {
     this.store.select(getRootSelector).subscribe(res => {
@@ -23,5 +23,4 @@ export class RootComponent implements OnInit {
   onSetRoot(): void {
     this.store.dispatch(rootActions.setRootAction({ value: this.value + 1 }));
   }
-
 }

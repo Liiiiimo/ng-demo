@@ -1,22 +1,7 @@
 import { AuthService } from './../services/auth.service';
 import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
-  HttpErrorResponse,
-} from '@angular/common/http';
-import {
-  BehaviorSubject,
-  catchError,
-  filter,
-  Observable,
-  switchMap,
-  tap,
-  throwError,
-  timeout,
-} from 'rxjs';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
+import { BehaviorSubject, catchError, filter, Observable, switchMap, tap, throwError, timeout } from 'rxjs';
 
 @Injectable()
 export class HttpInterceptorService implements HttpInterceptor {
@@ -24,10 +9,7 @@ export class HttpInterceptorService implements HttpInterceptor {
 
   constructor(private authService: AuthService) {}
 
-  intercept(
-    request: HttpRequest<any>,
-    next: HttpHandler
-  ): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const req = this.handleHeader(request);
     return next.handle(req).pipe(
       timeout(30000),
@@ -36,29 +18,29 @@ export class HttpInterceptorService implements HttpInterceptor {
         if (error.status === 400 || error.status === 401) {
           if (this.refreshToken$) {
             return this.refreshToken$.pipe(
-              filter((resp) => !!resp),
-              switchMap((r) => next.handle(this.handleHeader(req))),
-              catchError((err) => throwError(() => err))
+              filter(resp => !!resp),
+              switchMap(r => next.handle(this.handleHeader(req))),
+              catchError(err => throwError(() => err)),
             );
           } else {
             this.refreshToken$ = new BehaviorSubject<any>(null);
             // refresh token
             return this.authService.getRefreshToken().pipe(
-              tap((resp) => {
+              tap(resp => {
                 this.refreshToken$!.next(true);
                 this.refreshToken$ = undefined;
                 return next.handle(this.handleHeader(req));
               }),
-              catchError((err) => {
+              catchError(err => {
                 this.refreshToken$!.next(false);
                 this.refreshToken$ = undefined;
                 return throwError(() => err);
-              })
+              }),
             );
           }
         }
         return throwError(() => error);
-      })
+      }),
     );
   }
 

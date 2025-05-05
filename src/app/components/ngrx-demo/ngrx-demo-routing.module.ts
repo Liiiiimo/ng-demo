@@ -4,19 +4,20 @@ import { RootComponent } from './root/root.component';
 
 const routes: Routes = [
   {
-    path: '', component: RootComponent,
+    path: '',
+    component: RootComponent,
     children: [
       {
         path: '',
         loadChildren: () => import('./child-module/child.module').then(res => res.ChildModuleModule),
-        pathMatch: 'full'
-      }
-    ]
+        pathMatch: 'full',
+      },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class NgrxDemoRoutingModule { }
+export class NgrxDemoRoutingModule {}

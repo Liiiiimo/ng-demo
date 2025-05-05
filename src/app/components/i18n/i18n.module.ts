@@ -7,11 +7,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { DemoComponent } from './demo/demo.component';
 
-
 @NgModule({
-  declarations: [
-    DemoComponent
-  ],
+  declarations: [DemoComponent],
   imports: [
     CommonModule,
     I18nRoutingModule,
@@ -19,9 +16,9 @@ import { DemoComponent } from './demo/demo.component';
       loader: {
         provide: TranslateLoader,
         useClass: TranslateHttpLoader,
-        deps: [HttpClient]
-      }
-    })
-  ]
+        deps: [HttpClient],
+      },
+    }),
+  ],
 })
-export class I18nModule { }
+export class I18nModule {}

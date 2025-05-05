@@ -5,16 +5,8 @@ import { DemoComponent } from './components/demo/demo.component';
 import { DynamicCreateComponentRoutingModule } from './dynamic-create-component-routing.module';
 import { PortalModule } from '@angular/cdk/portal';
 
-
 @NgModule({
-  declarations: [
-    DynamicCreateComponentComponent,
-    DemoComponent
-  ],
-  imports: [
-    CommonModule,
-    DynamicCreateComponentRoutingModule,
-    PortalModule,
-  ]
+  declarations: [DynamicCreateComponentComponent, DemoComponent],
+  imports: [CommonModule, DynamicCreateComponentRoutingModule, PortalModule],
 })
-export class DynamicCreateComponentModule { }
+export class DynamicCreateComponentModule {}

@@ -13,16 +13,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => FakeInputComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class FakeInputComponent implements ControlValueAccessor {
-
   value: string | null = '';
 
-  _onChange: (fn: any) => void = (fn: any) => { };
-  _onTouch: (fn: any) => void = (fn: any) => { };
+  _onChange: (fn: any) => void = (fn: any) => {};
+  _onTouch: (fn: any) => void = (fn: any) => {};
 
   @HostListener('change', ['$event'])
   onChange(event: KeyboardEvent) {
@@ -40,18 +39,17 @@ export class FakeInputComponent implements ControlValueAccessor {
     }
   }
 
-  constructor () { }
+  constructor() {}
 
   writeValue(value: string | null): void {
     this.value = value;
-  };
+  }
 
   registerOnChange(fn: any): void {
     this._onChange = fn;
-  };
+  }
 
   registerOnTouched(fn: any): void {
     this._onTouch = fn;
-  };
-
+  }
 }

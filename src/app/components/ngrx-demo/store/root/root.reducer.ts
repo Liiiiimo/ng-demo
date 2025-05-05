@@ -2,24 +2,21 @@
 import { rootActions } from './root.action';
 
 export interface RootStateInterface {
-    name: string,
-    value: number;
+  name: string;
+  value: number;
 }
 
 const rootState: RootStateInterface = {
-    name: 'root',
-    value: 1
+  name: 'root',
+  value: 1,
 };
 
-
 export const rootReducer = createReducer(
-    rootState,
-    on(rootActions.setRootAction, (state, { value }) => {
-        return {
-            ...state,
-            value
-        };
-    })
+  rootState,
+  on(rootActions.setRootAction, (state, { value }) => {
+    return {
+      ...state,
+      value,
+    };
+  }),
 );
-
-

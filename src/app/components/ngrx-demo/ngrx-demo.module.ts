@@ -8,20 +8,18 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 const reductors = {
-  rootReducer
+  rootReducer,
 };
 
 @NgModule({
-  declarations: [
-    RootComponent
-  ],
+  declarations: [RootComponent],
   imports: [
     CommonModule,
     NgrxDemoRoutingModule,
     StoreModule.forRoot(reductors),
     StoreDevtoolsModule.instrument({
-      logOnly: true
-    })
-  ]
+      logOnly: true,
+    }),
+  ],
 })
-export class NgrxDemoModule { }
+export class NgrxDemoModule {}

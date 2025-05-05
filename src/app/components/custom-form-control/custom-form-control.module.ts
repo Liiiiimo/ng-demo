@@ -6,17 +6,8 @@ import { CustomFormControlComponent } from './custom-form-control/custom-form-co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FakeInputComponent } from './components/fake-input/fake-input.component';
 
-
 @NgModule({
-  declarations: [
-    FakeInputComponent,
-    CustomFormControlComponent
-  ],
-  imports: [
-    CommonModule,
-    CustomFormControlRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ]
+  declarations: [FakeInputComponent, CustomFormControlComponent],
+  imports: [CommonModule, CustomFormControlRoutingModule, FormsModule, ReactiveFormsModule],
 })
-export class CustomFormControlModule { }
+export class CustomFormControlModule {}

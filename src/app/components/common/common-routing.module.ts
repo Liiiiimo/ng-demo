@@ -4,14 +4,16 @@ import { CommonComponent } from './common/common.component';
 
 const routes: Routes = [
   {
-    path: '', component: CommonComponent, pathMatch: 'full',
-    data: { value: 1 }
+    path: '',
+    component: CommonComponent,
+    pathMatch: 'full',
+    data: { value: 1 },
   },
-  { path: 'test/:id', component: CommonComponent, data: { value: 2 } }
+  { path: 'test/:id', component: CommonComponent, data: { value: 2 } },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class CommonRoutingModule { }
+export class CommonRoutingModule {}
